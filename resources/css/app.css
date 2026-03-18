@@ -1,0 +1,44 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    /* Polices */
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace; /* Optionnel : pour le côté "code" */
+
+    /* Couleurs personnalisées (Phase 2) */
+    --color-cyber-cyan: #00FFF3;
+    --color-luxury-night: #09090B;
+    
+    /* Animations personnalisées pour la Phase 6 */
+    --animate-float: float 3s ease-in-out infinite;
+
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+}
+
+/* Custom Utilities si besoin */
+@utility text-balance {
+  text-wrap: balance;
+}
+
+/* Personnalisation de la scrollbar pour le panneau de détails */
+.overflow-y-auto {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 255, 243, 0.2) transparent; /* Utilise ton cyber-cyan */
+}
+
+.overflow-y-auto::-webkit-scrollbar {
+    width: 4px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 255, 243, 0.3);
+    border-radius: 20px;
+}
