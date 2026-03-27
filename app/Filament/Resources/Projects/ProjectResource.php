@@ -29,9 +29,9 @@ class ProjectResource extends Resource
 
     protected static string | null $recordTitleAttribute = 'title';
 
-    public static function form(Form $form): Form
-    {
-        return $form
+   public static function form(Schema $schema): Schema
+   {
+       return $schema
             ->schema([
                 TextInput::make('title')
                     ->label('Titre')
