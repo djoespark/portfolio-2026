@@ -29,9 +29,9 @@ class ProjectResource extends Resource
 
     protected static string | null $recordTitleAttribute = 'title';
 
-    public static function form(Schema $schema): Schema
+    public static function form(Form $form): Form
     {
-        return $schema
+        return $form
             ->schema([
                 TextInput::make('title')
                     ->label('Titre')
@@ -62,9 +62,11 @@ class ProjectResource extends Resource
                     ->columnSpanFull(),
 
                 FileUpload::make('thumbnail')
-                    ->label('Image de couverture')
-                    ->image()
-                    ->directory('projects'),
+                ->label('Image de couverture')
+                ->image()
+                ->disk('public')
+                ->directory('projects')
+                ->visibility('public'),
 
                 TextInput::make('github_url')
                     ->label('Lien GitHub')
