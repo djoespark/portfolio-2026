@@ -126,6 +126,25 @@ new class extends Component
                             </div>
                         </div>
                     @endif
+
+                    @if($selectedProject->demo_url)
+                       <div class="mt-12 pt-8 border-t border-white/5 animate-fade-up">
+                           <a href="{{ $selectedProject->demo_url }}" 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              class="group relative flex items-center justify-center gap-3 w-full px-8 py-5 bg-white text-black rounded-2xl font-bold transition-all duration-500 hover:bg-cyber-cyan hover:shadow-[0_0_40px_rgba(0,255,243,0.4)]">
+            
+                               <span class="text-xs uppercase tracking-[0.2em]">Visiter le site fictif</span>
+            
+                               <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                               </svg>
+                           </a>
+                           <p class="mt-4 text-center text-[9px] font-mono text-white/20 uppercase tracking-[0.3em]">
+                              Prototype interactif • 2026
+                           </p>
+                      </div>
+                  @endif
                 </div>
             @endisset
         </div>
